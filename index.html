@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matteo Piemonti · Consulente ADR / RID e gestione rifiuti</title>
+  <meta name="description" content="Matteo Piemonti: 12 anni tra analisi chimiche, discariche, impianti di trattamento e consulenza ADR/RID per tutte le classi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top">MATTEO<span>·</span>PIEMONTI</a>
+    <nav>
+      <a href="#esperienza">Esperienza</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#corsi">Corsi</a>
+      <a href="#attestati">Attestati</a>
+      <a href="#contatti" class="cta-ghost">Contatti</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-media"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <p class="eyebrow">CONSULENTE ADR / RID · TUTTE LE CLASSI</p>
+      <h1>MATTEO PIEMONTI</h1>
+      <p class="lead">Dodici anni sulla filiera dei rifiuti: dalle analisi chimiche alla gestione di discariche e impianti di trattamento. Consulente ADR e RID per tutte le classi.</p>
+      <div class="hero-actions">
+        <a class="btn-ghost" href="#servizi">Servizi</a>
+        <a class="btn-ghost" href="tel:+393486967893">Chiama</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="esperienza">
+    <p class="eyebrow">PROFILO</p>
+    <h2>UNA DESCRIZIONE SINTETICA</h2>
+    <div class="grid-2">
+      <div>
+        <p>Lavoro da 12 anni nel settore rifiuti. Ho seguito il percorso completo: caratterizzazione in laboratorio, classificazione, gestione documentale e operativa di discariche e impianti di trattamento, fino al trasporto di merci e rifiuti pericolosi.</p>
+        <p>Opero come consulente ADR e RID per tutte le classi. Supporto aziende che spediscono, caricano, trasportano o ricevono merci e rifiuti pericolosi, con un approccio concreto: norma applicata all’impianto e al mezzo, non solo sulla carta.</p>
+        <p>Offro anche formazione riservata (accesso con credenziali) e metto a disposizione gli attestati professionali.</p>
+      </div>
+      <ul class="stats">
+        <li><strong>12 ANNI</strong> analisi, impianti, discariche</li>
+        <li><strong>ADR + RID</strong> consulente, tutte le classi</li>
+        <li><strong>FILIERA</strong> dal campione al trasporto</li>
+        <li><strong>FORMAZIONE</strong> area corsi riservata</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="servizi">
+    <p class="eyebrow">AMBITI</p>
+    <h2>COSA FACCIO</h2>
+    <div class="cards">
+      <article>
+        <h3>ANALISI E CLASSIFICAZIONE</h3>
+        <p>Supporto sulla caratterizzazione chimica dei rifiuti, codice CER, caratteristiche di pericolo e verifiche di accettabilità in discarica o impianto.</p>
+      </article>
+      <article>
+        <h3>DISCARICHE E IMPIANTI</h3>
+        <p>Gestione e assistenza su discariche e impianti di trattamento: procedure, documentazione, organizzazione operativa e conformità.</p>
+      </article>
+      <article>
+        <h3>CONSULENTE ADR / RID</h3>
+        <p>Consulenza e nomina per il trasporto di merci e rifiuti pericolosi su strada (ADR) e ferrovia (RID), tutte le classi. Relazioni e adempimenti collegati.</p>
+      </article>
+      <article>
+        <h3>FORMAZIONE RISERVATA</h3>
+        <p>Corsi e materiali accessibili solo con credenziali, pensati per chi opera davvero su impianti, registri e spedizioni.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="corsi">
+    <p class="eyebrow">AREA RISERVATA</p>
+    <h2>CORSI</h2>
+    <p class="lead-sm">Accesso solo con credenziali. Password di prova da cambiare prima della pubblicazione (file <code>app.js</code>).</p>
+    <form class="login" id="login-form" onsubmit="return login(event)">
+      <label>Utente
+        <input type="text" id="user" autocomplete="username" required />
+      </label>
+      <label>Password
+        <input type="password" id="pass" autocomplete="current-password" required />
+      </label>
+      <button type="submit" class="btn-ghost">Entra</button>
+      <p class="err" id="login-err" hidden>Credenziali non valide.</p>
+    </form>
+    <div id="corsi-area" hidden>
+      <p class="ok">Accesso effettuato.</p>
+      <ul class="course-list">
+        <li>Modulo 1 — Classificazione rifiuti e collegamento ADR (da caricare)</li>
+        <li>Modulo 2 — Discariche, impianti e registri (da caricare)</li>
+        <li>Modulo 3 — Adempimenti del consulente ADR/RID (da caricare)</li>
+      </ul>
+      <button class="btn-ghost" type="button" onclick="logout()">Esci</button>
+    </div>
+  </section>
+
+  <section class="band" id="attestati">
+    <p class="eyebrow">DOCUMENTI</p>
+    <h2>ATTESTATI</h2>
+    <p class="lead-sm">Quando hai le scansioni, metti i PDF nella cartella <code>docs</code> e collega i pulsanti qui sotto.</p>
+    <div class="cards slim">
+      <article>
+        <h3>CONSULENTE ADR</h3>
+        <p>Attestato — file da caricare</p>
+      </article>
+      <article>
+        <h3>CONSULENTE RID</h3>
+        <p>Attestato — file da caricare</p>
+      </article>
+      <article>
+        <h3>ALTRI TITOLI</h3>
+        <p>Corsi e abilitazioni — da caricare</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="contatti">
+    <p class="eyebrow">CONTATTO</p>
+    <h2>MATTEO PIEMONTI</h2>
+    <p class="lead-sm">Scrivi o chiama per nomina consulente, impianti, classificazione o formazione.</p>
+    <p class="contact-line">
+      <a href="mailto:matteo.piemonti@gmail.com">matteo.piemonti@gmail.com</a>
+    </p>
+    <p class="contact-line">
+      <a href="tel:+393486967893">348 696 7893</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>MATTEO PIEMONTI · CONSULENZA RIFIUTI · ADR / RID</p>
+    <p>Sito personale. Le foto si possono aggiungere in un secondo momento.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
