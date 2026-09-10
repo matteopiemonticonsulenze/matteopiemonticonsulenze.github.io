@@ -45,7 +45,7 @@ a:hover { text-decoration: underline; }
   font: inherit;
 }
 
-.hero { padding: 72px 7vw 56px; max-width: 920px; }
+.hero { padding: 96px 7vw 72px; max-width: 820px; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -62,13 +62,26 @@ h3 { font-size: 20px; margin-bottom: 8px; }
 .lead-sm { color: var(--mute); max-width: 720px; margin-bottom: 24px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 
+.textlink {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+}
+.textlink:hover { color: var(--accent); text-decoration: none; border-color: var(--accent); }
+
 .btn, .btn-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 18px;
-  border-radius: 999px;
-  font: 600 14px var(--font);
+  padding: 10px 16px;
+  border-radius: 2px;
+  font: 600 12px var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
 }
