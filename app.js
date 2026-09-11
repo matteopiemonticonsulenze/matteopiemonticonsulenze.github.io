@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!az) return;
       sessionStorage.setItem("corso_fine", "1");
       sbloccaTest(az.test);
-      window.open(az.test, "_blank", "noopener");
     });
   }
   const key = sessionStorage.getItem("corsi_az");
