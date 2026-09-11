@@ -99,13 +99,19 @@
       <p class="err" id="login-err" hidden>Accesso non consentito.</p>
     </form>
     <div id="corsi-area" hidden>
-      <p class="ok">Accesso consentito.</p>
-      <ul class="course-list">
-        <li>Modulo 1 — Classificazione e ADR</li>
-        <li>Modulo 2 — Impianti e AIA</li>
-        <li>Modulo 3 — Consulente ADR/RID</li>
-      </ul>
-      <button class="btn btn-ghost" type="button" onclick="logout()">Esci</button>
+      <p class="ok" id="corso-titolo">Accesso consentito.</p>
+      <p class="lead-sm">Guardi la presentazione per intero. A fine video conferma e si apre il test.</p>
+      <div class="video-wrap">
+        <iframe id="corso-video" title="Presentazione del corso" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p>
+        <button class="btn" type="button" id="corso-fine">Presentazione conclusa</button>
+      </p>
+      <p>
+        <a class="btn" id="corso-test" href="#" target="_blank" rel="noopener" aria-disabled="true">Vai al test</a>
+      </p>
+      <p class="err" id="corso-lock">Il test si apre dopo la conferma a fine presentazione.</p>
+      <p><button class="btn btn-ghost" type="button" onclick="logout()">Esci</button></p>
     </div>
   </section>
 
@@ -116,17 +122,14 @@
       <article>
         <h3>Ordine di Brescia</h3>
         <p>N. 344, sezione A. 9 giugno 2022.</p>
-        <a class="textlink" href="iscrizione-ordine-chimici.pdf" target="_blank" rel="noopener">Documento</a>
       </article>
       <article>
         <h3>ADR / RID</h3>
         <p>Certificato CE C07142. Tutte le classi. Fino al 28 novembre 2027.</p>
-        <a class="textlink" href="certificato-adr-rid.pdf" target="_blank" rel="noopener">Documento</a>
       </article>
       <article>
         <h3>CEN / UNI</h3>
         <p>WG1 CEN/TC 366 — CEN/TS 14243. Milano, 5 luglio 2016.</p>
-        <a class="textlink" href="attestato-cen-uni-elt.pdf" target="_blank" rel="noopener">Documento</a>
       </article>
     </div>
   </section>
