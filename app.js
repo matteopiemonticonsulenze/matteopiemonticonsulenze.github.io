@@ -5,6 +5,24 @@ const AZIENDE = {
     titolo: "Corso — accesso di prova",
     video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
     test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
+  },
+  arvedi: {
+    pass: "Tubi",
+    titolo: "Corso — Arvedi Tubi Acciaio",
+    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
+    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
+  },
+  acciaieria: {
+    pass: "Coil",
+    titolo: "Corso — Acciaieria Arvedi",
+    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
+    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
+  },
+  aspireco: {
+    pass: "cisterna",
+    titolo: "Corso — Aspireco",
+    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
+    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
   }
 };
 
@@ -82,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!az) return;
       sessionStorage.setItem("corso_fine", "1");
       sbloccaTest(az.test);
+      window.open(az.test, "_blank", "noopener");
     });
   }
   const key = sessionStorage.getItem("corsi_az");
