@@ -17,6 +17,8 @@ function aziendaPerId(id) {
   return AZIENDE.find((az) => az.id === id) || null;
 }
 
+let corsoAttivo = null;
+
 function login(e) {
   e.preventDefault();
   const err = document.getElementById("login-err");
@@ -29,19 +31,20 @@ function login(e) {
     return false;
   }
   err.hidden = true;
-  sessionStorage.setItem("corsi_az", az.id);
-  sessionStorage.removeItem("corso_fine");
+  corsoAttivo = az;
   apriCorso(az);
   return false;
 }
 
 function logout() {
-  sessionStorage.removeItem("corsi_az");
-  sessionStorage.removeItem("corso_fine");
+  corsoAttivo = null;
   document.getElementById("login-form").hidden = false;
   document.getElementById("corsi-area").hidden = true;
+  document.getElementById("user").value = "";
+  document.getElementById("pass").value = "";
   const iframe = document.getElementById("corso-video");
   if (iframe) iframe.src = "";
+  bloccaTest();
 }
 
 function bloccaTest() {
@@ -65,11 +68,12 @@ function apriCorso(az) {
   document.getElementById("corsi-area").hidden = false;
   document.getElementById("corso-titolo").textContent = az.titolo;
   document.getElementById("corso-video").src = az.video;
-  if (sessionStorage.getItem("corso_fine") === "1") sbloccaTest(az.test);
-  else bloccaTest();
+  bloccaTest();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  sessionStorage.removeItem("corsi_az");
+  sessionStorage.removeItem("corso_fine");
   const test = document.getElementById("corso-test");
   if (test) {
     test.addEventListener("click", (e) => {
@@ -79,13 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const fine = document.getElementById("corso-fine");
   if (fine) {
     fine.addEventListener("click", () => {
-      const az = aziendaPerId(sessionStorage.getItem("corsi_az"));
-      if (!az) return;
-      sessionStorage.setItem("corso_fine", "1");
-      sbloccaTest(az.test);
-      window.open(az.test, "_blank", "noopener");
+      if (!corsoAttivo) return;
+      sbloccaTest(corsoAttivo.test);
+      window.open(corsoAttivo.test, "_blank", "noopener");
     });
   }
-  const az = aziendaPerId(sessionStorage.getItem("corsi_az"));
-  if (az) apriCorso(az);
 });
