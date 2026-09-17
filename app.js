@@ -1,36 +1,19 @@
-// Una voce per azienda. L'utente è la chiave (minuscolo).
-const AZIENDE = {
-  esempio: {
-    pass: "cambia-questa-password",
-    titolo: "Corso — accesso di prova",
-    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
-    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
-  },
-  arvedi: {
-    pass: "Tubi",
-    titolo: "Corso — Arvedi Tubi Acciaio",
-    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
-    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
-  },
-  acciaieria: {
-    pass: "Coil",
-    titolo: "Corso — Acciaieria Arvedi",
-    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
-    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
-  },
-  aspireco: {
-    pass: "cisterna",
-    titolo: "Corso — Aspireco",
-    video: "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview",
-    test: "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec"
-  }
-};
+const VIDEO = "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu/preview";
+const TEST = "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec";
+
+const AZIENDE = [
+  { id: "arvedi-tubi", user: "Arvedi", pass: "Tubi", titolo: "Corso — Arvedi Tubi Acciaio", video: VIDEO, test: TEST },
+  { id: "acciaieria", user: "Arvedi", pass: "Coil", titolo: "Corso — Acciaieria Arvedi", video: VIDEO, test: TEST },
+  { id: "aspireco", user: "Aspireco", pass: "Cisterna", titolo: "Corso — Aspireco", video: VIDEO, test: TEST }
+];
 
 function trovaAzienda(user, pass) {
-  const key = user.trim().toLowerCase();
-  const az = AZIENDE[key];
-  if (!az || az.pass !== pass) return null;
-  return { key, ...az };
+  const u = user.trim().toLowerCase();
+  return AZIENDE.find((az) => az.user.toLowerCase() === u && az.pass === pass) || null;
+}
+
+function aziendaPerId(id) {
+  return AZIENDE.find((az) => az.id === id) || null;
 }
 
 function login(e) {
@@ -45,7 +28,7 @@ function login(e) {
     return false;
   }
   err.hidden = true;
-  sessionStorage.setItem("corsi_az", az.key);
+  sessionStorage.setItem("corsi_az", az.id);
   sessionStorage.removeItem("corso_fine");
   apriCorso(az);
   return false;
@@ -95,13 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const fine = document.getElementById("corso-fine");
   if (fine) {
     fine.addEventListener("click", () => {
-      const key = sessionStorage.getItem("corsi_az");
-      const az = key && AZIENDE[key];
+      const az = aziendaPerId(sessionStorage.getItem("corsi_az"));
       if (!az) return;
       sessionStorage.setItem("corso_fine", "1");
       sbloccaTest(az.test);
+      window.open(az.test, "_blank", "noopener");
     });
   }
-  const key = sessionStorage.getItem("corsi_az");
-  if (key && AZIENDE[key]) apriCorso({ key, ...AZIENDE[key] });
+  const az = aziendaPerId(sessionStorage.getItem("corsi_az"));
+  if (az) apriCorso(az);
 });
