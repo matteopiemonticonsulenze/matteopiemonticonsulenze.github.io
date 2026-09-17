@@ -2,14 +2,15 @@ const VIDEO = "https://drive.google.com/file/d/1e172kcC3gpoexpXjFTUHh8LupoI4ptJu
 const TEST = "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucxOD8l4twptLlaSoG-WEF0EG-qA4aDrqbBhPkiwKdLWKg/exec";
 
 const AZIENDE = [
-  { id: "arvedi-tubi", user: "Arvedi", pass: "Tubi", titolo: "Corso — Arvedi Tubi Acciaio", video: VIDEO, test: TEST },
-  { id: "acciaieria", user: "Arvedi", pass: "Coil", titolo: "Corso — Acciaieria Arvedi", video: VIDEO, test: TEST },
-  { id: "aspireco", user: "Aspireco", pass: "Cisterna", titolo: "Corso — Aspireco", video: VIDEO, test: TEST }
+  { id: "arvedi-tubi", users: ["arvedi", "arvedi tubi acciaio"], pass: "tubi", titolo: "Corso — Arvedi Tubi Acciaio", video: VIDEO, test: TEST },
+  { id: "acciaieria", users: ["arvedi", "acciaieria", "acciaieria arvedi"], pass: "coil", titolo: "Corso — Acciaieria Arvedi", video: VIDEO, test: TEST },
+  { id: "aspireco", users: ["aspireco"], pass: "cisterna", titolo: "Corso — Aspireco", video: VIDEO, test: TEST }
 ];
 
 function trovaAzienda(user, pass) {
   const u = user.trim().toLowerCase();
-  return AZIENDE.find((az) => az.user.toLowerCase() === u && az.pass === pass) || null;
+  const p = pass.trim().toLowerCase();
+  return AZIENDE.find((az) => az.users.includes(u) && az.pass === p) || null;
 }
 
 function aziendaPerId(id) {
