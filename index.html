@@ -63,10 +63,10 @@
     <a class="logo" href="#top">Matteo Piemonti</a>
     <nav>
       <a href="#chi-sono">Chi sono</a>
-      <a href="#titoli">Titoli</a>
       <a href="#oggi">Attività</a>
       <a href="#campo">Lavoro</a>
-      <a href="#corsi">Riservato</a>
+      <a href="#corsi">Corsi</a>
+      <a href="#attestati">Titoli</a>
       <a href="#contatti">Contatto</a>
     </nav>
     <button class="menu-btn" type="button" onclick="document.body.classList.toggle('nav-open')">Menu</button>
@@ -89,29 +89,7 @@
     </div>
   </section>
 
-  <section class="band band-alt" id="titoli">
-    <p class="eyebrow">Titoli</p>
-    <h2>Titoli</h2>
-    <div class="cards">
-      <article>
-        <h3>Ordine di Brescia</h3>
-        <p>N. 344, sezione A. 9 giugno 2022.</p>
-        <a class="textlink" href="https://matteopiemonti.it/iscrizione-ordine-chimici.pdf" target="_blank" rel="noopener">Apri il PDF</a>
-      </article>
-      <article>
-        <h3>ADR / RID</h3>
-        <p>Certificato CE C07142. Tutte le classi. Fino al 28 novembre 2027.</p>
-        <a class="textlink" href="https://matteopiemonti.it/certificato-adr-rid.pdf" target="_blank" rel="noopener">Apri il PDF</a>
-      </article>
-      <article>
-        <h3>CEN / UNI</h3>
-        <p>WG1 CEN/TC 366 — CEN/TS 14243. Milano, 5 luglio 2016.</p>
-        <a class="textlink" href="https://matteopiemonti.it/attestato-cen-uni-elt.pdf" target="_blank" rel="noopener">Apri il PDF</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="band" id="oggi">
+  <section class="band band-alt" id="oggi">
     <p class="eyebrow">Mandato</p>
     <h2>Attività</h2>
     <p class="lead-sm">Oggi: gestione rifiuti, audit ISO 9001 · 14001 · 45001, consulenza e formazione ADR/RID.</p>
@@ -156,51 +134,67 @@
 
   <section class="band band-alt" id="corsi">
     <p class="eyebrow">Riservato</p>
-    <h2>Corsi e documenti</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px; margin-top:16px;">
-      <div>
-        <h3>Corsi</h3>
-        <form class="login" id="login-form" onsubmit="return login(event)">
-          <label>Utente
-            <input type="text" id="user" autocomplete="username" required />
-          </label>
-          <label>Password
-            <input type="password" id="pass" autocomplete="current-password" required />
-          </label>
-          <button type="submit" class="btn">Entra</button>
-          <p class="err" id="login-err" hidden>Accesso non consentito.</p>
-        </form>
-        <div id="corsi-area" hidden>
-          <p class="ok" id="corso-titolo">Accesso consentito.</p>
-          <p class="lead-sm">Guardi la presentazione per intero. A fine video conferma e si apre il test.</p>
-          <div class="video-wrap">
-            <iframe id="corso-video" title="Presentazione del corso" allow="autoplay" allowfullscreen></iframe>
-          </div>
-          <p>
-            <button class="btn" type="button" id="corso-fine">Presentazione conclusa</button>
-          </p>
-          <p>
-            <a class="btn" id="corso-test" href="#" target="_blank" rel="noopener" aria-disabled="true">Vai al test</a>
-          </p>
-          <p class="err" id="corso-lock">Il test si apre dopo la conferma a fine presentazione.</p>
-          <p><button class="btn btn-ghost" type="button" onclick="logout()">Esci</button></p>
-        </div>
+    <h2>Corsi</h2>
+    <form class="login" id="login-form" onsubmit="return login(event)">
+      <label>Utente
+        <input type="text" id="user" autocomplete="username" required />
+      </label>
+      <label>Password
+        <input type="password" id="pass" autocomplete="current-password" required />
+      </label>
+      <button type="submit" class="btn">Entra</button>
+      <p class="err" id="login-err" hidden>Accesso non consentito.</p>
+    </form>
+    <div id="corsi-area" hidden>
+      <p class="ok" id="corso-titolo">Accesso consentito.</p>
+      <p class="lead-sm">Guardi la presentazione per intero. A fine video conferma e si apre il test.</p>
+      <div class="video-wrap">
+        <iframe id="corso-video" title="Presentazione del corso" allow="autoplay" allowfullscreen></iframe>
       </div>
-      <div>
-        <h3>Documenti</h3>
-        <p class="lead-sm">Accesso riservato. Si apre in una nuova scheda.</p>
-        <form class="login" id="docs-login" onsubmit="return apriDocumenti(event)">
-          <label>Utente
-            <input type="text" id="docs-user" autocomplete="username" required />
-          </label>
-          <label>Password
-            <input type="password" id="docs-pass" autocomplete="current-password" required />
-          </label>
-          <button type="submit" class="btn">Apri documenti</button>
-          <p class="err" id="docs-err" hidden>Accesso non consentito.</p>
-        </form>
-      </div>
+      <p>
+        <button class="btn" type="button" id="corso-fine">Presentazione conclusa</button>
+      </p>
+      <p>
+        <a class="btn" id="corso-test" href="#" target="_blank" rel="noopener" aria-disabled="true">Vai al test</a>
+      </p>
+      <p class="err" id="corso-lock">Il test si apre dopo la conferma a fine presentazione.</p>
+      <p><button class="btn btn-ghost" type="button" onclick="logout()">Esci</button></p>
     </div>
+  </section>
+
+  <section class="band" id="attestati">
+    <p class="eyebrow">Documenti</p>
+    <h2>Titoli</h2>
+    <div class="cards">
+      <article>
+        <h3>Ordine di Brescia</h3>
+        <p>N. 344, sezione A. 9 giugno 2022.</p>
+        <a class="textlink" href="https://matteopiemonti.it/iscrizione-ordine-chimici.pdf" target="_blank" rel="noopener">Apri il PDF</a>
+      </article>
+      <article>
+        <h3>ADR / RID</h3>
+        <p>Certificato CE C07142. Tutte le classi. Fino al 28 novembre 2027.</p>
+        <a class="textlink" href="https://matteopiemonti.it/certificato-adr-rid.pdf" target="_blank" rel="noopener">Apri il PDF</a>
+      </article>
+      <article>
+        <h3>CEN / UNI</h3>
+        <p>WG1 CEN/TC 366 — CEN/TS 14243. Milano, 5 luglio 2016.</p>
+        <a class="textlink" href="https://matteopiemonti.it/attestato-cen-uni-elt.pdf" target="_blank" rel="noopener">Apri il PDF</a>
+      </article>
+    </div>
+
+    <h2 style="margin-top:48px;">Documenti per ditta</h2>
+    <p class="lead-sm">Accesso riservato. Si apre in una nuova scheda.</p>
+    <form class="login" id="docs-login" onsubmit="return apriDocumenti(event)">
+      <label>Utente
+        <input type="text" id="docs-user" autocomplete="username" required />
+      </label>
+      <label>Password
+        <input type="password" id="docs-pass" autocomplete="current-password" required />
+      </label>
+      <button type="submit" class="btn">Apri documenti</button>
+      <p class="err" id="docs-err" hidden>Accesso non consentito.</p>
+    </form>
   </section>
 
   <section class="band band-alt" id="contatti">
