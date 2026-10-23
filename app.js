@@ -4,8 +4,13 @@ const TEST = "https://script.google.com/macros/s/AKfycbxTlm-JV6Mk29v0l6me65zcucx
 const AZIENDE = [
   { id: "arvedi-tubi", users: ["arvedi", "arvedi tubi acciaio"], pass: "tubi", titolo: "Corso — Arvedi Tubi Acciaio", video: VIDEO, test: TEST },
   { id: "acciaieria", users: ["arvedi", "acciaieria", "acciaieria arvedi"], pass: "coil", titolo: "Corso — Acciaieria Arvedi", video: VIDEO, test: TEST },
-  { id: "acciaieria-est", users: ["acciaieria arvedi area est", "area est", "acciaieria est"], pass: "coils", titolo: "Corso — Acciaieria Arvedi Area Est", video: VIDEO, test: TEST },
-  { id: "aspireco", users: ["aspireco"], pass: "cisterna", titolo: "Corso — Aspireco", video: VIDEO, test: TEST }
+  { id: "acciaieria-est", users: ["acciaieria arvedi area est", "area est", "acciaieria est"], pass: "recupero", titolo: "Documenti — Acciaieria Arvedi Area Est", video: VIDEO, test: TEST },
+  { id: "acciaieria-nord", users: ["acciaieria arvedi area nord", "area nord", "acciaieria nord"], pass: "verniciatura", titolo: "Documenti — Acciaieria Arvedi Area Nord", video: VIDEO, test: TEST },
+  { id: "acciaieria-sud", users: ["acciaieria arvedi area sud", "area sud", "acciaieria sud"], pass: "acciaio", titolo: "Documenti — Acciaieria Arvedi Area Sud", video: VIDEO, test: TEST },
+  { id: "acciaieria-ovest", users: ["acciaieria arvedi area ovest", "area ovest", "acciaieria ovest"], pass: "coil", titolo: "Documenti — Acciaieria Arvedi Area Ovest", video: VIDEO, test: TEST },
+  { id: "aspireco", users: ["aspireco"], pass: "cisterna", titolo: "Corso — Aspireco", video: VIDEO, test: TEST },
+  { id: "metalfer-corbetta", users: ["metalfer corbetta", "corbetta"], pass: "trafila", titolo: "Documenti — Metalfer Corbetta", video: VIDEO, test: TEST },
+  { id: "metalfer-roe", users: ["metalfer roè volciano", "metalfer roe", "roe volciano", "roè volciano"], pass: "trafila", titolo: "Documenti — Metalfer Roè Volciano", video: VIDEO, test: TEST }
 ];
 
 function trovaAzienda(user, pass) {
@@ -16,7 +21,11 @@ function trovaAzienda(user, pass) {
 
 const DOCUMENTI = {
   "arvedi-tubi": "documenti-arvedi-tubi.html",
-  "acciaieria-est": "documenti-acciaieria-est.html"
+  "acciaieria-est": "documenti-acciaieria-est.html",
+  "acciaieria-nord": "documenti-acciaieria-nord.html",
+  "acciaieria-sud": "documenti-acciaieria-sud.html",
+  "acciaieria-ovest": "documenti-acciaieria-ovest.html",
+  "aspireco": "documenti-aspireco.html"
 };
 
 function apriDocumenti(e) {
