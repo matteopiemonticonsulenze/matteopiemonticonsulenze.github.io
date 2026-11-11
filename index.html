@@ -48,6 +48,9 @@
     #corso-test[aria-disabled="true"] { opacity:.4; pointer-events:none; }
     .contact-line { margin-top:10px; font-size:18px; }
     .mute-note { color:var(--mute); margin-top:14px; }
+    .lang-switch { display:flex; gap:6px; margin-left:12px; }
+    .lang-btn { background:none; border:1px solid transparent; font-size:18px; cursor:pointer; padding:2px 4px; border-radius:4px; }
+    .lang-btn.active { border-color:var(--line); background:var(--paper); }
     footer { padding:28px 7vw 48px; color:var(--mute); font-size:14px; border-top:1px solid var(--line); }
     @media (max-width:800px) {
       .nav nav { display:none; position:absolute; top:56px; right:12px; flex-direction:column; background:var(--paper); border:1px solid var(--line); padding:12px 16px; }
@@ -62,25 +65,29 @@
   <header class="nav">
     <a class="logo" href="#top">Matteo Piemonti</a>
     <nav>
-      <a href="#chi-sono">Chi sono</a>
-      <a href="#titoli">Titoli</a>
-      <a href="#oggi">Attività</a>
-      <a href="#campo">Lavoro</a>
-      <a href="#corsi">Riservato</a>
-      <a href="#contatti">Contatto</a>
+      <a href="#chi-sono" data-i18n="nav.chi-sono">Chi sono</a>
+      <a href="#titoli" data-i18n="nav.titoli">Titoli</a>
+      <a href="#oggi" data-i18n="nav.attivita">Attività</a>
+      <a href="#campo" data-i18n="nav.lavoro">Lavoro</a>
+      <a href="#corsi" data-i18n="nav.riservato">Riservato</a>
+      <a href="#contatti" data-i18n="nav.contatto">Contatto</a>
     </nav>
+    <div class="lang-switch">
+      <button type="button" class="lang-btn active" data-lang="it" title="Italiano">🇮🇹</button>
+      <button type="button" class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+    </div>
     <button class="menu-btn" type="button" onclick="document.body.classList.toggle('nav-open')">Menu</button>
   </header>
 
   <section class="hero" id="top">
-    <p class="eyebrow">Dottore chimico · Albo di Brescia 344 A · ADR / RID</p>
-    <h1>L’esperienza che si riconosce<br />al primo sguardo.</h1>
-    <p class="lead">Gestione rifiuti, sicurezza e conformità normativa per chi cerca un interlocutore che ha già risolto il problema prima ancora che si presenti.</p>
+    <p class="eyebrow" data-i18n="hero.eyebrow">Dottore chimico · Albo di Brescia 344 A · ADR / RID</p>
+    <h1 data-i18n="hero.title">L’esperienza che si riconosce<br />al primo sguardo.</h1>
+    <p class="lead" data-i18n="hero.lead">Gestione rifiuti, sicurezza e conformità normativa per chi cerca un interlocutore che ha già risolto il problema prima ancora che si presenti.</p>
   </section>
 
   <section class="band" id="chi-sono">
-    <p class="eyebrow">Profilo</p>
-    <h2>Chi sono</h2>
+    <p class="eyebrow" data-i18n="chi.eyebrow">Profilo</p>
+    <h2 data-i18n="chi.title">Chi sono</h2>
     <div class="prose">
       <p>Matteo Piemonti è perito chimico e laureato in Chimica Applicata e Ambientale (Università degli Studi di Milano) e in Scienze e Tecnologie Chimiche (Università degli Studi di Milano-Bicocca). Iscritto all’Ordine dei Chimici e dei Fisici di Brescia, n. 344 sezione A.</p>
       <p>Da oltre dieci anni opera nel settore ambientale e della gestione dei rifiuti, in un percorso che ha attraversato più fasi del ciclo: dalla ricerca su impianti di biogas alimentati da matrici non convenzionali — scarti della produzione di olio di palma, fanghi di depurazione industriali — alla responsabilità di laboratorio di controllo qualità nel recupero di pneumatici fuori uso, con partecipazione a tavoli di lavoro per l’aggiornamento della normativa UNI. Ha proseguito nella gestione di laboratori interni presso discariche del Nord Italia, occupandosi di scadenze AIA, campionamenti ed emissioni in atmosfera, fino alla direzione di un impianto di trattamento rifiuti pericolosi e non pericolosi.</p>
@@ -90,8 +97,8 @@
   </section>
 
   <section class="band band-alt" id="titoli">
-    <p class="eyebrow">Titoli</p>
-    <h2>Titoli</h2>
+    <p class="eyebrow" data-i18n="titoli.eyebrow">Titoli</p>
+    <h2 data-i18n="titoli.title">Titoli</h2>
     <div class="cards">
       <article>
         <h3>Ordine di Brescia</h3>
@@ -112,9 +119,9 @@
   </section>
 
   <section class="band" id="oggi">
-    <p class="eyebrow">Mandato</p>
-    <h2>Attività</h2>
-    <p class="lead-sm">Oggi: gestione rifiuti, audit ISO 9001 · 14001 · 45001, consulenza e formazione ADR/RID.</p>
+    <p class="eyebrow" data-i18n="oggi.eyebrow">Mandato</p>
+    <h2 data-i18n="oggi.title">Attività</h2>
+    <p class="lead-sm" data-i18n="oggi.lead">Oggi: gestione rifiuti, audit ISO 9001 · 14001 · 45001, consulenza e formazione ADR/RID.</p>
     <div class="cards">
       <article>
         <h3>Rifiuti</h3>
@@ -136,8 +143,8 @@
   </section>
 
   <section class="band" id="campo">
-    <p class="eyebrow">Campo</p>
-    <h2>Lavoro</h2>
+    <p class="eyebrow" data-i18n="campo.eyebrow">Campo</p>
+    <h2 data-i18n="campo.title">Lavoro</h2>
     <div class="photos">
       <figure>
         <img src="impianto-canale.jpg" alt="Sezione di impianto" />
@@ -155,8 +162,8 @@
   </section>
 
   <section class="band band-alt" id="corsi">
-    <p class="eyebrow">Riservato</p>
-    <h2>Corsi e documenti</h2>
+    <p class="eyebrow" data-i18n="corsi.eyebrow">Riservato</p>
+    <h2 data-i18n="corsi.title">Corsi e documenti</h2>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px; margin-top:16px;">
       <div>
         <h3>Corsi</h3>
@@ -203,8 +210,8 @@
   </section>
 
   <section class="band band-alt" id="contatti">
-    <p class="eyebrow">Studio</p>
-    <h2>Contatto</h2>
+    <p class="eyebrow" data-i18n="contatti.eyebrow">Studio</p>
+    <h2 data-i18n="contatti.title">Contatto</h2>
     <p class="contact-line"><a href="mailto:matteo.piemonti@gmail.com">matteo.piemonti@gmail.com</a></p>
     <p class="contact-line"><a href="tel:+393486967893">348 696 7893</a></p>
     <p class="mute-note">Roccafranca (BS)</p>
@@ -214,6 +221,79 @@
     <p>Matteo Piemonti</p>
   </footer>
 
+  <script>
+    const i18n = {
+      it: {
+        "nav.chi-sono": "Chi sono",
+        "nav.titoli": "Titoli",
+        "nav.attivita": "Attività",
+        "nav.lavoro": "Lavoro",
+        "nav.riservato": "Riservato",
+        "nav.contatto": "Contatto",
+        "hero.eyebrow": "Dottore chimico · Albo di Brescia 344 A · ADR / RID",
+        "hero.title": "L’esperienza che si riconosce<br />al primo sguardo.",
+        "hero.lead": "Gestione rifiuti, sicurezza e conformità normativa per chi cerca un interlocutore che ha già risolto il problema prima ancora che si presenti.",
+        "chi.eyebrow": "Profilo",
+        "chi.title": "Chi sono",
+        "titoli.eyebrow": "Titoli",
+        "titoli.title": "Titoli",
+        "oggi.eyebrow": "Mandato",
+        "oggi.title": "Attività",
+        "oggi.lead": "Oggi: gestione rifiuti, audit ISO 9001 · 14001 · 45001, consulenza e formazione ADR/RID.",
+        "campo.eyebrow": "Campo",
+        "campo.title": "Lavoro",
+        "corsi.eyebrow": "Riservato",
+        "corsi.title": "Corsi e documenti",
+        "contatti.eyebrow": "Studio",
+        "contatti.title": "Contatto"
+      },
+      en: {
+        "nav.chi-sono": "About",
+        "nav.titoli": "Credentials",
+        "nav.attivita": "Services",
+        "nav.lavoro": "Field",
+        "nav.riservato": "Members",
+        "nav.contatto": "Contact",
+        "hero.eyebrow": "Doctor of Chemistry · Brescia Register 344 A · ADR / RID",
+        "hero.title": "Experience recognised<br />at first glance.",
+        "hero.lead": "Waste management, safety and regulatory compliance for those who want an interlocutor who has already solved the problem before it appears.",
+        "chi.eyebrow": "Profile",
+        "chi.title": "About",
+        "titoli.eyebrow": "Credentials",
+        "titoli.title": "Credentials",
+        "oggi.eyebrow": "Mandate",
+        "oggi.title": "Services",
+        "oggi.lead": "Today: waste management, ISO 9001 · 14001 · 45001 audits, ADR/RID consulting and training.",
+        "campo.eyebrow": "Field",
+        "campo.title": "Work",
+        "corsi.eyebrow": "Members",
+        "corsi.title": "Courses and documents",
+        "contatti.eyebrow": "Studio",
+        "contatti.title": "Contact"
+      }
+    };
+
+    function setLang(lang) {
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (i18n[lang] && i18n[lang][key]) {
+          el.innerHTML = i18n[lang][key];
+        }
+      });
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem("lang", lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    });
+
+    const saved = localStorage.getItem("lang") || "it";
+    if (saved === "en") setLang("en");
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
